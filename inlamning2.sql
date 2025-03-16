@@ -29,7 +29,7 @@ CREATE TABLE beställningar (
 OrderID INT AUTO_INCREMENT PRIMARY KEY,
 KundID INT NOT NULL,
 Datum DATE NOT NULL,
-Totalbelopp DECIMAL NOT NULL,
+Totalbelopp DECIMAL(10,2) NOT NULL,
 FOREIGN KEY (KundID) REFERENCES Kunder(KundID) -- Här anger man En FK och pekar ut vart den ska referera till vilket är då till tabellen där PK finns och själva namnet på PK. Detta skapar en relation mellan tabellen. Beställning är kopplad till 1 kund. Viktigt att man anger rätt value i KundID, där ska det inte vara på auto.  
 ) AUTO_INCREMENT = 100; -- Detta är till att den ska börja dela ut siffror från 100 så det blir lite snyggare i tabellen sen. 
 
