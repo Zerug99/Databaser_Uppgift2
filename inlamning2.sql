@@ -72,6 +72,8 @@ INSERT INTO Orderrader (ISBN, orderID, Antal) VALUES -- Det som är viktigt att 
 ("9781407132082",101, 1),
 ("9789189516076",102, 2);
 
+CREATE INDEX idx_epost ON Kunder(E-Post);
+
 SELECT * 
 FROM beställningar 
 INNER JOIN Kunder
