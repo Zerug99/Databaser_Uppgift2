@@ -36,14 +36,22 @@ En förbättring hade kunnat vara att sätta ett ännu högre minsta pris, efter
 ## Trigger
 Syftet med triggern i databasen var att automatiskt minska lagersaldot i `Böcker` varje gång en ny orderrad läggs till. 
 Trigger använder `NEW.Antal` för att veta antalet och `NEW.ISBN` för vilken bok det är. Dessa värden går vidare till `UPDATE`-sats som minskar kolumnen `Lagerstatus` som finns i tabellen `Böcker`
+Det var riktigt smidigt med triggers och man kanske skulle kunna lägg till en trigger som loggar en varning när lagersaldo gå ner ett viss nivå. 
+Då kan inköpare beställa nya böcker innan det tar helt slut i lagersaldot. 
 
 På så sätt behöver man inte manuellt justera lagret vid varje beställning.
 Ju mindre man behöver ändra manuellt, desto mindre är risken för fel. Denna typ av automatisk uppdatering gör databasen mer robust och pålitlig.
 
+
+Lite svårt med att veta vart går gränserna med sql och känns som man kan hamna i ett rabbit hål lätt.
+
+
 ** Framtiden 
 
 När butiken skulle ha växt till flera tusen kunder skulle jag lägga index på flera ställen som t.ex `KundID`,`ISBN` och `OrderID` Så det skulle förbättra sökningen. 
-Viktigt att inte hämta all data med `Select *` för det skulle möjligtvis sänka ner servern. 
+Viktigt att inte hämta all data med `Select *` för det skulle möjligtvis sänka ner servern. Man skulle helt enkelt inte ha sammma fritid som man hade med ett litet databas.
 Jag skulle också bli mer specifikt på storleken på fält som definieras, det ska vara rimligt längd för `VARCHAR` Man minskar helt enkelt onödig datalagring. 
+Blivit mer sträng med backups, skulle man förlora data på alla ordrar när man har flera tusen kunder så skulle det inte uppskattas av någon. Möjligtvis en trigger som gör ett backup ett viss tid som passar. 
+Sist men inte minst skulle jag automatisera med att inserta values t.ex för kunder, för det känns inte optimalt att göra det manuellt. 
 
 
