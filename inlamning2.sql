@@ -1,5 +1,5 @@
 CREATE DATABASE pj_bokhandel; 
-SELECT * FROM KundLogg;
+
 USE pj_bokhandel; 
 
 -- Nedanför ser man skapandet av en av tabellerna Kunder. Inom parenteserna anger man varje attribut med vilken datatyp som ska användas.
