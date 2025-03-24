@@ -1,3 +1,5 @@
+Patryk Jersak YH24
+
 CREATE DATABASE pj_bokhandel; 
 
 USE pj_bokhandel; 
