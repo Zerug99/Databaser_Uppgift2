@@ -51,7 +51,7 @@ Det kan vara svårt att veta var gränsen går i SQL, och det är lätt att fast
 När butiken skulle ha växt till flera tusen kunder skulle jag lägga index på flera ställen som t.ex `KundID`,`ISBN` och `OrderID` Så det skulle förbättra sökningen. 
 Viktigt att inte hämta all data med `Select *` för det skulle möjligtvis sänka ner servern. Man skulle helt enkelt inte ha sammma fritid som man hade med ett litet databas.
 Jag skulle också bli mer specifikt på storleken på fält som definieras, det ska vara rimligt längd för `VARCHAR` Man minskar helt enkelt onödig datalagring. 
-Blivit mer sträng med backups, skulle man förlora data på alla ordrar när man har flera tusen kunder så skulle det inte uppskattas av någon. Möjligtvis en trigger som gör ett backup ett viss tid som passar. 
+Blivit mer sträng med backups, skulle man förlora data på alla ordrar när man har flera tusen kunder så skulle det inte uppskattas av någon. Möjligtvis schema lägga ett backup en viss tid som passar. 
 Sist men inte minst skulle jag automatisera med att inserta values t.ex för kunder, för det känns inte optimalt att göra det manuellt. 
 
 
