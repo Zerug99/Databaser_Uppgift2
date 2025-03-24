@@ -43,7 +43,7 @@ På så sätt behöver man inte manuellt justera lagret vid varje beställning.
 Ju mindre man behöver ändra manuellt, desto mindre är risken för fel. Denna typ av automatisk uppdatering gör databasen mer robust och pålitlig.
 
 
-Lite svårt med att veta vart går gränserna med sql och känns som man kan hamna i ett rabbit hål lätt.
+Det kan vara svårt att veta var gränsen går i SQL, och det är lätt att fastna i detaljer.
 
 
 ** Framtiden 
