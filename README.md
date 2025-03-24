@@ -48,7 +48,8 @@ Det kan vara svårt att veta var gränsen går i SQL, och det är lätt att fast
 
 ** Framtiden 
 
-När butiken skulle ha växt till flera tusen kunder skulle jag lägga index på flera ställen som t.ex `KundID`,`ISBN` och `OrderID` Så det skulle förbättra sökningen. 
+När butiken skulle ha växt till flera tusen kunder skulle jag lägga index på flera ställen som t.ex `KundID`,`ISBN` och `OrderID` Så det skulle förbättra sökningen. Man får dock inte lägga index överallt och planera det smart.
+Man får kolla vad är dom vanligaste data hämtningar.
 Viktigt att inte hämta all data med `Select *` för det skulle möjligtvis sänka ner servern. Man skulle helt enkelt inte ha sammma fritid som man hade med ett litet databas.
 Jag skulle också bli mer specifikt på storleken på fält som definieras, det ska vara rimligt längd för `VARCHAR` Man minskar helt enkelt onödig datalagring. 
 Blivit mer sträng med backups, skulle man förlora data på alla ordrar när man har flera tusen kunder så skulle det inte uppskattas av någon. Möjligtvis schema lägga ett backup en viss tid som passar. 
